@@ -1,3 +1,68 @@
 <center><font color="red" size="15">SENİ ÇOK SEVİYORUM YASEMİN</font></center>
 
-<script src="http://www.webkodu.com/kod-kaynak/wk-kalp-efekt.js"></script>
+<script language="JavaScript">
+P=new Image();
+P.src="http://www.resimupload.us/out.php?i=40628_kalp.gif"; file://Pre-load your image here!
+Pic="http://www.resimupload.us/out.php?i=40628_kalp.gif";   file://Type your image name here!
+amount=8;        file://Amount of images, not less than 2!
+BY=-20;           file://Your image height!
+BX=-20;           file://Your image width!
+S=2;              file://speed!
+ 
+/************************ Nothing needs altering below ************************/
+ns=(document.layers)?1:0;
+if (ns){
+for (i=0; i < amount; i++)
+document.write("<LAYER NAME='netscape"+i+"' LEFT=0 TOP=0><img src="+Pic+"></LAYER>");
+}
+else{
+document.write("<div style='position:absolute;top:0px;left:0px'><div style='position:relative'>");
+for (i=0; i < amount; i++)
+{document.write("<img id='explorer' src='"+Pic+"' style='position:absolute;top:0px;left:0px'>")}
+document.write("</div></div>")
+}
+R=new Array(),PB=new Array(),RD=new Array(),Y=new Array(),X=new Array(),D=new Array(),VB=0,HB=0,SP=new Array();;
+for (i=0; i < amount; i++){Y[i]=10;X[i]=10;D[i]=Math.floor(Math.random()*80+10);SP[i]=Math.floor(Math.random()*S+3)}
+function Curve(){
+plusMinus=new Array(1,-1,2,-2,3,-3,0,1,-1)
+for (i=0; i < amount; i++){
+R[i]=Math.floor(Math.random()*plusMinus.length);
+RD[i]=plusMinus[R[i]];
+}
+setTimeout('Curve()',1800);
+}
+function MoveRandom(){
+T=setTimeout('MoveRandom()',10);
+var H=(document.layers)?window.innerHeight:document.body.clientHeight;
+var W=(document.layers)?window.innerWidth:document.body.clientWidth;
+var YS=(document.layers)?window.pageYOffset:document.body.scrollTop;
+var XS=(document.layers)?window.pageXOffset:document.body.scrollLeft;
+for (i=0; i < amount; i++){
+PB[i]=D[i]+=RD[i];
+y = SP[i]*Math.sin(PB[i]*Math.PI/180);
+x = SP[i]*Math.cos(PB[i]*Math.PI/180);
+if (D[i] < 0) D[i]+=360;
+Y[i]+=y;
+X[i]+=x;
+VB=180-D[i];
+HB=0-D[i];
+file://Corner rebounds! not necessary but looks nice.
+if ((Y[i] < 1) && (X[i] < 1)) {Y[i]=1;X[i]=1;D[i]=45;}
+if ((Y[i] < 1) && (X[i] > W+BX)) {Y[i]=1;X[i]=W+BX;D[i]=135;}
+if ((Y[i] > H+BY) && (X[i] < 1)) {Y[i]=H+BY;X[i]=1;D[i]=315;}
+if ((Y[i] > H+BY) && (X[i] > W+BX)) {Y[i]=H+BY;X[i]=W+BX;D[i]=225;}
+file://Edge rebounds!
+if (Y[i] < 1) {Y[i]=1;D[i]=HB;}  
+if (Y[i] > H+BY) {Y[i]=H+BY;D[i]=HB;}  
+if (X[i] < 1) {X[i]=1;D[i]=VB;} 
+if (X[i] > W+BX) {X[i]=W+BX;D[i]=VB;} 
+var layer=(document.layers)?document.layers['netscape'+i]:explorer[i].style;
+layer.top=Y[i]+YS;
+layer.left=X[i]+XS;
+}
+}
+function sTaRt(){Curve();MoveRandom()}
+if (document.all||document.layers){sTaRt()}
+file://-->
+</script>
+<p></p>

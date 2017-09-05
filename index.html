@@ -1,23 +1,23 @@
 <center><font color="red" size="15">SENİ ÇOK SEVİYORUM YASEMİN</font></center>
 <script>
 // Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
-  var snowsrc="http://www.webkodu.com/kod-kaynak/wk-kar-efekt-2.png"
+  var snowsrc="http://www.webkodu.com/kod-kaynak/wk-kalp-efekt.png"
 
   var no = 10;
 
   var hidesnowtime = 0;
 
   var snowdistance = "pageheight";
-
 // Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
 
+// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
   var ie4up = (document.all) ? 1 : 0;
   var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
 
 	function iecompattest(){
 	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
-	}
-// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+	}// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   var dx, xp, yp;   
   var am, stx, sty;  
   var i, doc_width = 800, doc_height = 600; 
@@ -28,15 +28,15 @@
   } else if (ie4up) {
     doc_width = iecompattest().clientWidth;
     doc_height = iecompattest().clientHeight;
-  }
-// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+  }// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
   dx = new Array();
   xp = new Array();
   yp = new Array();
   am = new Array();
   stx = new Array();
   sty = new Array();
-  snowsrc=(snowsrc.indexOf("http://www.webkodu.com")!=-1)? "http://www.webkodu.com/kod-kaynak/wk-kar-efekt-2.png" : snowsrc
+  snowsrc=(snowsrc.indexOf("http://www.webkodu.com")!=-1)? "http://www.webkodu.com/kod-kaynak/wk-kalp-efekt.png" : snowsrc
   for (i = 0; i < no; ++ i) {  
     dx[i] = 0;                       
     xp[i] = Math.random()*(doc_width-50);  
@@ -50,7 +50,7 @@
       } else {
         document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
       }
-    }
+    }// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
   }
 // Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
   function snowIE_NS6() { 
@@ -63,24 +63,24 @@
         yp[i] = 0;
         stx[i] = 0.02 + Math.random()/10;
         sty[i] = 0.7 + Math.random();
-      }// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+      }
       dx[i] += stx[i];
       document.getElementById("dot"+i).style.top=yp[i]+"px";
       document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
     }// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
     snowtimer=setTimeout("snowIE_NS6()", 10);
-  }
-// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+  }// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
 	function hidesnow(){
 		if (window.snowtimer) clearTimeout(snowtimer)
 		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
 	}
-		
-// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+		// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+
 if (ie4up||ns6up){
     snowIE_NS6();
 		if (hidesnowtime>0)
 		setTimeout("hidesnow()", hidesnowtime*1000)
 		}
-		// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
+	// Bu Bir WebKodu.com ÃœrÃ¼nÃ¼dÃ¼r. http://www.webkodu.com
             </script>
